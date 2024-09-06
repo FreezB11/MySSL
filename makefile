@@ -11,4 +11,4 @@ run-test:
 
 fest:
 	g++ -c main.cc -lws2_32
-	g++ -o main.o ./ssl/obj/*.o -lws2_32
+	g++ -o main.o ./ssl/*.o -lws2_32
