@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="_5Rae6G-ybn3498Wd8Gk" name="Page-1">
-        <mxGraphModel dx="567" dy="412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="810" dy="1027" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -20,7 +20,7 @@
                     <mxGeometry x="70" y="190" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="103.102.166.224" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="600" y="80" width="160" height="60" as="geometry"/>
+                    <mxGeometry x="640" y="80" width="160" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;endArrow=none;" parent="1" source="2" target="7" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -62,13 +62,19 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="17" value="Header&lt;br&gt;GET /${path} HTTP/1.1&amp;nbsp;&lt;br&gt;Host: en.wikipedia.com" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="340" y="110" width="130" height="80" as="geometry"/>
+                    <mxGeometry x="380" y="110" width="130" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="Response&lt;br&gt;blah blah blah" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="360" y="210" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="Data is sent cryptographically via TLS." style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="190" y="370" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="Server&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="650" y="50" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Client" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="105" y="165" width="50" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

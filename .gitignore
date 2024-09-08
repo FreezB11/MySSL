@@ -1,3 +1,5 @@
 /copied_book
 /book/after
 /book/before
+*.o
+tls-0.1/*.o

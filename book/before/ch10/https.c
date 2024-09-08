@@ -3,10 +3,10 @@
 #include <errno.h>
 #include <string.h>
 #include <sys/types.h>
-#ifdef WIN32
+#ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
-#else
+#elif __linux__
 #include <netdb.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
