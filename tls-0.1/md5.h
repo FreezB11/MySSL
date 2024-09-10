@@ -7,7 +7,7 @@
 
 #include "digest.h"
 
-unsigned int md5_initial_hash[ MD5_RESULT_SIZE ];
+extern unsigned int md5_initial_hash[ MD5_RESULT_SIZE ];
 
 int md5_hash( const unsigned char *input, 
        int len, 

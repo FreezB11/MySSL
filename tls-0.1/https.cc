@@ -1,4 +1,5 @@
 #include "https.h"
+#include <cstring>
 
 const std::string currentDateTime() {
     time_t     now = time(0);

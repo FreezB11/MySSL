@@ -14,8 +14,9 @@
     #error "Unknown operating system"
 #endif
 
-#define port 80
-#define ports 443
+#define Port 80
+#define Ports 443
+#include "tls.h"
 
 /*
     Utils
@@ -34,6 +35,7 @@ const std::string currentDateTime();
 
 class https{
 private:
+    TLSParameters tls_context;
 #ifdef _WIN32
     WSADATA wsa;
     SOCKET sock;
@@ -44,6 +46,9 @@ private:
     char *path;
 public:
     https(char *URI);
+    int httpsConnect(const char *HOST,const char *PATH);
+    int httpsSend(int sock, const char *path, const char *host, TLSParameters *tls_context);
+    void httpsRecv(int sock, TLSParameters *tls_connect);
 };
 
 
