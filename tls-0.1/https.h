@@ -30,12 +30,16 @@
 #define clog(x,y) std::cout << y << x << COLOR_RESET << std::endl;
 #define tlog(x,y) std::cout << YEL << "[" << currentDateTime() << "] " << y << x << COLOR_RESET << std::endl;
 
+#define MAX_GET_COMMAND 255
+#define BUFFER_SIZE 255
 
 const std::string currentDateTime();
 
 class https{
 private:
     TLSParameters tls_context;
+    struct hostent *host_name;
+    struct sockaddr_in host_address;
 #ifdef _WIN32
     WSADATA wsa;
     SOCKET sock;
@@ -44,6 +48,10 @@ private:
 #endif
     char *host;
     char *path;
+    int master_secret_length;
+    unsigned char *master_secret;
+    int session_id_length;
+    unsigned char *session_id;
 public:
     https(char *URI);
     int httpsConnect(const char *HOST,const char *PATH);
