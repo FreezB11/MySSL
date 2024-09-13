@@ -2,4 +2,5 @@
 /book/after
 /book/before
 *.o
-tls-0.1/*.o
+tls-0.1/*.\
+/private/
