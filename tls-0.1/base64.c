@@ -5,6 +5,10 @@
 static char *base64 = 
  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
+/*
+  hoping that the output size is 4/3 * input size
+*/
+
 void base64_encode( const unsigned char *input, int len, unsigned char *output )
 {  
   do
