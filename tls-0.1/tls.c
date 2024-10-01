@@ -1113,7 +1113,7 @@ static int send_certificate( int connection, TLSParameters *parameters )
     perror( "unable to load certificate file" );
     return 1;
   }
-
+  printf("certificate sent successfully");
   if ( fstat( certificate_file, &certificate_stat ) == -1 )
   {
     perror( "unable to stat certificate file" );
@@ -2462,8 +2462,9 @@ int tls_connect( int connection,
   {
     perror( "Unable to send client hello" );
     return 1;
+  }else{
+    printf("\e[0;33m CLIENT_HELLO[stat]: Sent\n");
   }
-
   // Step 2. Receive the server hello response
   parameters->server_hello_done = 0;
   parameters->got_certificate_request = 0;
@@ -2473,6 +2474,8 @@ int tls_connect( int connection,
     {
       perror( "Unable to receive server hello" );
       return 2;
+    }{
+      printf("\e[0;33mhell ya we recieved the tls msg");
     }
   }
 
@@ -2481,6 +2484,7 @@ int tls_connect( int connection,
   {
     send_certificate( connection, parameters );
   }
+  printf("possibly here");
 
   // Step 3. Send client key exchange, change cipher spec (7.1) and encrypted 
   // handshake message
@@ -2520,6 +2524,8 @@ int tls_connect( int connection,
     {
       perror( "Unable to receive server finished" );
       return 6;
+    }else{
+      printf("hell ya we recieved the tls msg\n");
     }
   }
 

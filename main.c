@@ -316,7 +316,7 @@ int main( int argc, char *argv[ ] )
     return 1;
   }
 
-  printf( "Connecting to host '%s'\n", host );
+  printf( "\e[0;37 Connecting to host '%s'\n", host );
   // Step 1: open a socket connection on http port with the destination host.
 #ifdef WIN32
   if ( WSAStartup( MAKEWORD( 2, 2 ), &wsaData ) != NO_ERROR )
@@ -336,7 +336,7 @@ int main( int argc, char *argv[ ] )
 
   if ( proxy_host )
   {
-    printf( "Connecting to host '%s'\n", proxy_host );
+    printf( "\e[0;37 Connecting to host '%s'\n", proxy_host );
     host_name = gethostbyname( proxy_host );
   } 
   else
@@ -362,7 +362,7 @@ int main( int argc, char *argv[ ] )
     return 4;
   }
 
-  printf( "Connection complete; negotiating TLS parameters\n" );
+  printf("\e[0;30m Connection complete; negotiating TLS parameters\n" );
 
   if ( proxy_host )
   {
@@ -378,7 +378,6 @@ int main( int argc, char *argv[ ] )
       return 3;
     }
   }
-
   if ( session_id != NULL )
   {
     if ( tls_resume( client_connection, session_id_length,
@@ -394,14 +393,15 @@ int main( int argc, char *argv[ ] )
     }
   }
   else
-  {
+  { 
+    printf("\e[0;34m TLS_CONNECT \n");
     if ( tls_connect( client_connection, &tls_context, 0 ) )
     {
       fprintf( stderr, "Error: unable to negotiate TLS connection.\n" );
       return 3;
     }
   }
-
+  printf("check");
   printf( "Retrieving document: '%s'\n", path );
   http_get( client_connection, path, host, &tls_context );
 
