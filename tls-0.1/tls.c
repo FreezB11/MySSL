@@ -2463,7 +2463,7 @@ int tls_connect( int connection,
     perror( "Unable to send client hello" );
     return 1;
   }else{
-    printf("\e[0;33m CLIENT_HELLO[stat]: Sent\n");
+    printf("\e[0;32m CLIENT_HELLO[stat]: Sent\n");
   }
   // Step 2. Receive the server hello response
   parameters->server_hello_done = 0;
@@ -2472,7 +2472,7 @@ int tls_connect( int connection,
   {
     if ( receive_tls_msg( connection, NULL, 0, parameters ) < 0 )
     {
-      perror( "Unable to receive server hello" );
+      perror( "\e[0;31m Unable to receive server hello" );
       return 2;
     }{
       printf("\e[0;33mhell ya we recieved the tls msg");

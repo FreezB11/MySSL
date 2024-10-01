@@ -127,12 +127,16 @@ static int parse_huge( huge *target, struct asn1struct *source )
 
   return 0;
 }
-
+// OBJ_md5WithRSAEncryption="\x2A\x86\x48\x86\xF7\x0D\x01\x01\x04"
 static const unsigned char OID_md5WithRSA[] = 
-  { 0x06, 0x09, 0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x04 };
+  {0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x04 };
 
+// OBJ_shaWithRSAEncryption="\x2B\x0E\x03\x02\x0F"
+static const unsigned char OID_shaWithRSA[] = 
+  {0x2B, 0x0E, 0x03, 0x02, 0x0F};
+//OBJ_sha1WithRSAEncryption="\x2A\x86\x48\x86\xF7\x0D\x01\x01\x05"
 static const unsigned char OID_sha1WithRSA[] = 
-  { 0x2A, 0x86, 0x48, 0x86, 0xF7, 0x0D, 0x01, 0x01, 0x05 };
+  {0x2B, 0x86, 0x48, 0x86, 0xF7,0x0D,0x01,0x01,0x05};
 static const unsigned char OID_sha1WithDSA[] = 
   { 0x2A, 0x86, 0x48, 0xCE, 0x38, 0x04, 0x03 };
 static const unsigned char OID_sha256WithECDSA[] = 
@@ -168,7 +172,7 @@ static int parse_algorithm_identifier( signatureAlgorithmIdentifier *target,
   else
   {
     int i;
-    fprintf( stderr, "Unsupported or unrecognized algorithm identifier OID " );
+    fprintf( stderr, "\e[1;31m Unsupported or unrecognized algorithm identifier OID " );
     for ( i = 0; i < oid->length; i++ )
     {
       fprintf( stderr, "%.02x ", oid->data[ i ] );

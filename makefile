@@ -8,7 +8,7 @@ all:
 	g++ -o build/main ./obj/*.o -lm
 
 cc:
-	gcc -o main main.c ./tls-0.1/*.c -lm
+	gcc -c main main.c ./tls-0.1/*.c -lm
 	mv *.o ./obj
 	gcc -o build/cc ./obj/*.o -lm
 
